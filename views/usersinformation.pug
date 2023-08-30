@@ -1,0 +1,7 @@
+extends layout
+
+block content
+    each val, index in users
+        tr
+            td 
+                a(href="/educationdata")=val.id+". "+val.surname+" "+val.name+" "+val.patronym

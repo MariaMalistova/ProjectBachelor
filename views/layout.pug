@@ -1,0 +1,15 @@
+mixin message(name)
+    span= session.surname+" "+session.name +" "+session.patronym
+
+doctype html
+html(lang="en")
+    head 
+        block head
+            title=title
+            include includes/styles 
+    body 
+        include includes/header 
+        .page-wrapper             
+            block content
+        block scr    
+

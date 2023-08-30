@@ -1,0 +1,34 @@
+extends layout
+
+block append content 
+    .form-holder
+        .register-panel 
+            form(method="post" action="/register")
+                table.formRegLog 
+                    tr
+                        td Логин 
+                        td 
+                            input(class="txtRegLog" type="text" name="username" require)
+                    tr 
+                        td Фамилия 
+                        td 
+                            input(class="txtRegLog" type="text" name="surname" value=users.surname require)   
+                    tr 
+                        td Имя 
+                        td 
+                            input(class="txtRegLog" type="text" name="name" value=users.name require)
+                    tr 
+                        td Отчество 
+                        td 
+                            input(class="txtRegLog" type="text" name="patronym" value=users.patronym)
+                    tr 
+                        td Пароль 
+                        td 
+                            input(class="txtRegLog" type="password" name="password" require)
+                    tr 
+                        td
+                        td
+                            input(class="buttonRegLog" type="submit" value="Зарегистрироваться")
+                a(href="/login") Вход             
+                if (errs) 
+                    p Пользователь с данным логином уже существует                

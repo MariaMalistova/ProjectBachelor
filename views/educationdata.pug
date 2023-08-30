@@ -1,0 +1,89 @@
+extends user-pattern
+
+block mainblock
+    .infousermain
+        form(method="post" action="/examdata")
+            h1 Образование
+            table.formRegLog 
+                tr
+                    td Тип образовательного учреждения *
+                    td 
+                        select(class="txtsel" name="educationschool" required)
+                            if (info.educationschool=='Школа')
+                                option(value="Школа" selected) Школа
+                            else
+                                option(value="Школа") Школа 
+                            if (info.educationschool=='Вуз')
+                                option(value="Вуз" selected) Вуз
+                            else
+                                option(value="Вуз") Вуз
+                            if (info.educationschool=='СПО')
+                                option(value="СПО" selected) СПО
+                            else
+                                option(value="СПО") СПО
+                            if (info.educationschool=='НПО')
+                                option(value="НПО" selected) НПО 
+                            else
+                                option(value="НПО") НПО 
+                tr 
+                    td Название образовательного учреждения *
+                    td 
+                        input(class="txtinput" type="text" name="schoolname" value=info.schoolname required)
+                tr 
+                    td Страна обучения * 
+                    td 
+                        input(class="txtinput" type="text" name="countryeducate" value=info.countryeducate required)
+                tr 
+                    td Регион *
+                    td 
+                        input(class="txtinput" type="text" name="regioneducate" value=info.regioneducate required) 
+                tr 
+                    td Населенный пункт
+                    td 
+                        input(class="txtinput" type="text" name="pointeducate" value=info.pointeducate) 
+                tr 
+                    td Год окончания обучения * 
+                    td 
+                        input(class="txtinput" type="text" name="yeareducate" value=info.yeareducate pattern="[0-9]{4}" required)
+                tr 
+                    td Серия аттестата (диплома)
+                    td 
+                        input(class="txtinput" type="text" name="attestseria" value=info.attestseria) 
+                tr 
+                    td Номер аттестата (диплома)
+                    td 
+                        input(class="txtinput" type="text" name="attestnumber" value=info.attestnumber)
+            h1 Иностранный язык 
+            table.formRegLog
+                tr 
+                    td
+                        if (info.isenglish)
+                            input(type='checkbox' name='isenglish' checked)
+                        else
+                            input(type='checkbox' name='isenglish' unchecked)
+                    td английский 
+                tr 
+                    td
+                        if (info.isgerman)
+                            input(type='checkbox' name='isgerman' checked)
+                        else
+                            input(type='checkbox' name='isgerman' unchecked)
+                    td немецкий
+                tr 
+                    td
+                        if (info.isfrench)
+                            input(type='checkbox' name='isfrench' checked)
+                        else
+                            input(type='checkbox' name='isfrench' unchecked)
+                    td французский              
+                tr 
+                    td
+                        if (info.isanother)
+                            input(type='checkbox' name='isanother' checked) 
+                        else
+                            input(type='checkbox' name='isanother' unchecked)
+                    td другое                                                                                                                                              
+                tr 
+                    td
+                    td
+                        input(class="buttonD" type="submit" value="Далее")

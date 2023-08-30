@@ -1,0 +1,10 @@
+nav 
+    ul.linksName 
+        block ul
+        ul.commonLinks
+            block links
+                if (session)
+                    li
+                        +message(name)
+                    li(style="float: right;")
+                        a(href="/loggout") Выйти

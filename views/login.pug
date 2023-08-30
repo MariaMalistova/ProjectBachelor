@@ -1,0 +1,22 @@
+extends layout
+
+block append content 
+    .form-holder
+        .login-panel 
+            form(method="post" action="/login")
+                table.formRegLog  
+                    tr
+                        td Логин 
+                        td 
+                            input(class="txtRegLog" type="text" name="username" required)
+                    tr 
+                        td Пароль
+                        td 
+                            input(class="txtRegLog" type="password" name="password" required)
+                    tr 
+                        td
+                        td
+                            input(class="txtRegLog" class="buttonRegLog" type="submit" value="Вход")
+                a(href="/register") Регистрация                
+                if (errs) 
+                    p Неверное имя пользователя или пароль                

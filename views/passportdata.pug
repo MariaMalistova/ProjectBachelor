@@ -1,0 +1,32 @@
+extends user-pattern
+
+block mainblock
+    .infousermain
+        form(method="post" action="/contactsdata")
+            h1 Паспорт
+            table.formRegLog 
+                tr
+                    td Серия *
+                    td 
+                        input(class="txtinput" type="text" name="seria" pattern="[0-9]{4}" value=info.seria required) 
+                tr 
+                    td Номер *
+                    td 
+                        input(class="txtinput" type="text" name="number" pattern="[0-9]{6}" value=info.number required) 
+                tr 
+                    td Кем выдан * 
+                    td 
+                        input(class="txtinput" type="text" name="whopass" value=info.whopass required)
+                tr 
+                    td Дата выдачи * 
+                    td 
+                        input(class="txtinput" type="date" name="datepass" value=info.datepass required)
+                tr 
+                    td Код подразделения
+                    td 
+                        input(class="txtinput" type="text" name="codepass" value=info.codepass) 
+                tr 
+                    td СНИЛС
+                    td 
+                        input(class="txtinput" type="text" name="snils" value=info.snils)                                              
+            input(class="buttonD" type="submit" value="Далее")

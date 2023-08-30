@@ -1,0 +1,344 @@
+extends user-pattern
+
+block mainblock
+    .infousermain
+        form(method="post" action="/extradata")
+            table.formRegLog   
+                tr
+                    td 
+                        h3 Русский язык
+                    td 
+                        select(name="RLege")
+                            if (info.RLege=='')
+                                option(value="" selected)
+                            else
+                                option(value="") 
+                            if (info.RLege=='ЕГЭ')
+                                option(value="ЕГЭ" selected) ЕГЭ
+                            else
+                                option(value="ЕГЭ") ЕГЭ
+                            if (info.RLege=='Олимпиада')
+                                option(value="Олимпиада" selected) Олимпиада
+                            else
+                                option(value="Олимпиада") Олимпиада
+                tr 
+                    td Балл
+                    td
+                        input(class="txtinput" type='number' name='RLpoints' min="0" max="100" value=info.RLpoints)                
+                tr 
+                    td Год получения ЕГЭ  
+                    td 
+                        input(class="txtinput" type='text' name='RLyear' pattern="[0-9]{4}" value=info.RLyear)
+            table.formRegLog       
+                tr
+                    td
+                        h3 Математика
+                    td 
+                        select(name="Mathege")
+                            if (info.Mathege=='')
+                                option(value="" selected)
+                            else
+                                option(value="") 
+                            if (info.Mathege=='ЕГЭ')
+                                option(value="ЕГЭ" selected) ЕГЭ
+                            else
+                                option(value="ЕГЭ") ЕГЭ
+                            if (info.Mathege=='Олимпиада')
+                                option(value="Олимпиада" selected) Олимпиада
+                            else
+                                option(value="Олимпиада") Олимпиада
+                tr 
+                    td Балл
+                    td
+                        input(class="txtinput" type='number' name='Mathpoints' min="0" max="100" value=info.Mathpoints)                            
+                tr 
+                    td Год получения ЕГЭ  
+                    td 
+                        input(class="txtinput" type='text' name='Mathyear' pattern="[0-9]{4}" value=info.Mathyear)
+            table.formRegLog 
+                tr
+                    td 
+                        h3 Физика
+                    td 
+                        select(name="PHege")
+                            if (info.PHege=='')
+                                option(value="" selected)
+                            else
+                                option(value="") 
+                            if (info.PHege=='ЕГЭ')
+                                option(value="ЕГЭ" selected) ЕГЭ
+                            else
+                                option(value="ЕГЭ") ЕГЭ
+                            if (info.PHege=='Олимпиада')
+                                option(value="Олимпиада" selected) Олимпиада
+                            else
+                                option(value="Олимпиада") Олимпиада         
+                tr 
+                    td Балл
+                    td
+                        input(class="txtinput" type='number' name='PHpoints' min="0" max="100" value=info.PHpoints) 
+                tr 
+                    td Год получения ЕГЭ  
+                    td 
+                        input(class="txtinput" type='text' name='PHyear' pattern="[0-9]{4}" value=info.PHyear)
+            table.formRegLog          
+                tr
+                    td
+                        h3 Обществознание
+                    td 
+                        select(name="SSege")
+                            if (info.SSege=='')
+                                option(value="" selected)
+                            else
+                                option(value="") 
+                            if (info.SSege=='ЕГЭ')
+                                option(value="ЕГЭ" selected) ЕГЭ
+                            else
+                                option(value="ЕГЭ") ЕГЭ
+                            if (info.SSege=='Олимпиада')
+                                option(value="Олимпиада" selected) Олимпиада
+                            else
+                                option(value="Олимпиада") Олимпиада
+                tr 
+                    td Балл
+                    td
+                        input(class="txtinput" type='number' name='SSpoints' min="0" max="100" value=info.SSpoints)
+                tr 
+                    td Год получения ЕГЭ  
+                    td 
+                        input(class="txtinput" type='text' name='SSyear' pattern="[0-9]{4}" value=info.SSyear)
+            table.formRegLog          
+                tr
+                    td
+                        h3 История
+                    td 
+                        select(name="HIege")
+                            if (info.HIege=='')
+                                option(value="" selected)
+                            else
+                                option(value="") 
+                            if (info.HIege=='ЕГЭ')
+                                option(value="ЕГЭ" selected) ЕГЭ
+                            else
+                                option(value="ЕГЭ") ЕГЭ
+                            if (info.HIege=='Олимпиада')
+                                option(value="Олимпиада" selected) Олимпиада
+                            else
+                                option(value="Олимпиада") Олимпиада
+                tr 
+                    td Балл
+                    td
+                        input(class="txtinput" type='number' name='HIpoints' min="0" max="100" value=info.HIpoints)
+                tr 
+                    td Год получения ЕГЭ  
+                    td 
+                        input(class="txtinput" type='text' name='HIyear' pattern="[0-9]{4}" value=info.HIyear)
+            table.formRegLog          
+                tr
+                    td
+                        h3 Литература
+                    td 
+                        select(name="LIege")
+                            if (info.LIege=='')
+                                option(value="" selected)
+                            else
+                                option(value="") 
+                            if (info.LIege=='ЕГЭ')
+                                option(value="ЕГЭ" selected) ЕГЭ
+                            else
+                                option(value="ЕГЭ") ЕГЭ
+                            if (info.LIege=='Олимпиада')
+                                option(value="Олимпиада" selected) Олимпиада
+                            else
+                                option(value="Олимпиада") Олимпиада
+                tr 
+                    td Балл
+                    td
+                        input(class="txtinput" type='number' name='LIpoints' min="0" max="100" value=info.LIpoints)
+                tr 
+                    td Год получения ЕГЭ  
+                    td 
+                        input(class="txtinput" type='text' name='LIyear' pattern="[0-9]{4}" value=info.LIyear) 
+            h1 Вступительные испытания 
+            table.formRegLog        
+                tr
+                    td 
+                        h3 Русский язык
+                    td 
+                        select(name="RLtest")
+                            if (info.RLtest=='')
+                                option(value="" selected)
+                            else
+                                option(value="") 
+                            if (info.RLtest=='ЕГЭ')
+                                option(value="ЕГЭ" selected) ЕГЭ
+                            else
+                                option(value="ЕГЭ") ЕГЭ
+                            if (info.RLtest=='РГРТУ')
+                                option(value="РГРТУ" selected) РГРТУ
+                            else
+                                option(value="РГРТУ") РГРТУ
+            if (info.RLisspecialrights)
+                input(type='checkbox' name='RLisspecialrights' checked)
+            else    
+                input(type='checkbox' name='RLisspecialrights' unchecked)    
+            span С созданием специальных условий 
+            table.formRegLog          
+                tr
+                    td
+                        h3 Математика
+                    td 
+                        select(name="Mathtest")
+                            if (info.Mathtest=='')
+                                option(value="" selected)
+                            else
+                                option(value="") 
+                            if (info.Mathtest=='ЕГЭ')
+                                option(value="ЕГЭ" selected) ЕГЭ
+                            else
+                                option(value="ЕГЭ") ЕГЭ
+                            if (info.Mathtest=='РГРТУ')
+                                option(value="РГРТУ" selected) РГРТУ
+                            else
+                                option(value="РГРТУ") РГРТУ
+            if (info.Mathisspecialrights)
+                input(type='checkbox' name='Mathisspecialrights' checked)
+            else    
+                input(type='checkbox' name='Mathisspecialrights' unchecked)
+            span С созданием специальных условий 
+            table.formRegLog          
+                tr
+                    td
+                        h3 Физика
+                    td 
+                        select(name="PHtest")
+                            if (info.PHtest=='')
+                                option(value="" selected)
+                            else
+                                option(value="") 
+                            if (info.PHtest=='ЕГЭ')
+                                option(value="ЕГЭ" selected) ЕГЭ
+                            else
+                                option(value="ЕГЭ") ЕГЭ
+                            if (info.PHtest=='РГРТУ')
+                                option(value="РГРТУ" selected) РГРТУ
+                            else
+                                option(value="РГРТУ") РГРТУ
+            if (info.PHisspecialrights)
+                input(type='checkbox' name='PHisspecialrights' checked)
+            else
+                input(type='checkbox' name='PHisspecialrights' unchecked)    
+            span С созданием специальных условий 
+            table.formRegLog         
+                tr
+                    td 
+                        h3 Обществознани
+                    td 
+                        select(name="SStest")
+                            if (info.SStest=='')
+                                option(value="" selected)
+                            else
+                                option(value="") 
+                            if (info.SStest=='ЕГЭ')
+                                option(value="ЕГЭ" selected) ЕГЭ
+                            else
+                                option(value="ЕГЭ") ЕГЭ
+                            if (info.SStest=='РГРТУ')
+                                option(value="РГРТУ" selected) РГРТУ
+                            else
+                                option(value="РГРТУ") РГРТУ
+            if (info.SSisspecialrights)
+                input(type='checkbox' name='SSisspecialrights' checked)
+            else
+                input(type='checkbox' name='SSisspecialrights' unchecked)
+            span С созданием специальных условий 
+            table.formRegLog         
+                tr
+                    td
+                        h3 История
+                    td 
+                        select(name="HItest")
+                            if (info.HItest=='')
+                                option(value="" selected)
+                            else
+                                option(value="") 
+                            if (info.HItest=='ЕГЭ')
+                                option(value="ЕГЭ" selected) ЕГЭ
+                            else
+                                option(value="ЕГЭ") ЕГЭ
+                            if (info.HItest=='РГРТУ')
+                                option(value="РГРТУ" selected) РГРТУ
+                            else
+                                option(value="РГРТУ") РГРТУ
+            if (info.HIisspecialrights)
+                input(type='checkbox' name='HIisspecialrights' checked)
+            else
+                input(type='checkbox' name='HIisspecialrights' unchecked)
+            span С созданием специальных условий 
+            table.formRegLog          
+                tr
+                    td
+                        h3 Литература
+                    td 
+                        select(name="LItest")
+                            if (info.LItest=='')
+                                option(value="" selected)
+                            else
+                                option(value="") 
+                            if (info.LItest=='ЕГЭ')
+                                option(value="ЕГЭ" selected) ЕГЭ
+                            else
+                                option(value="ЕГЭ") ЕГЭ
+                            if (info.LItest=='РГРТУ')
+                                option(value="РГРТУ" selected) РГРТУ
+                            else
+                                option(value="РГРТУ") РГРТУ
+            if (info.LIisspecialrights)
+                input(type='checkbox' name='LIisspecialrights' checked)
+            else
+                input(type='checkbox' name='LIisspecialrights' unchecked)
+            span С созданием специальных условий
+            table.formRegLog     
+                tr
+                    td
+                        h3 Рисунок, живопись, композиция
+                    td 
+                        select(name="DRtest")
+                            if (info.DRtest=='')
+                                option(value="" selected)
+                            else
+                                option(value="")
+                            if (info.DRtest=='РГРТУ')
+                                option(value="РГРТУ" selected) РГРТУ
+                            else
+                                option(value="РГРТУ") РГРТУ
+            if (info.DRisspecialrights)
+                input(type='checkbox' name='DRisspecialrights' checked)
+            else
+                input(type='checkbox' name='DRisspecialrights' unchecked)
+            span С созданием специальных условий    
+            table.formRegLog          
+                tr
+                    td 
+                        h3 Собеседование по направлению подготовки (специальности)
+                    td 
+                        select(name="Inttest")
+                            if (info.Inttest=='')
+                                option(value="" selected)
+                            else
+                                option(value="")
+                            if (info.Inttest=='РГРТУ')
+                                option(value="РГРТУ" selected) РГРТУ
+                            else
+                                option(value="РГРТУ") РГРТУ
+            if (info.Intisspecialrights)
+                input(type='checkbox' name='Intisspecialrights' checked)
+            else
+                input(type='checkbox' name='Intisspecialrights' unchecked)
+            span С созданием специальных условий
+            table.formRegLog
+                tr 
+                    td Перечень специальных условий
+                    td   
+                        input(type='text' name='extratest' value=info.extratest) 
+            input(class="buttonRegLog" type="submit" value="Далее")

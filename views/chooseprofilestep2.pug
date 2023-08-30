@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    .choosemain
+        h2 Какой критерий оказывает большее влияние на выбор направления обучения?
+        form(method="post" action="/chooseprofilestep2").formCriteria
+            table.criteriasCompar
+                - var i = 0;
+                while i < criterias.length - 1
+                    - var j = i + 1
+                    while j < criterias.length
+                        tr
+                            td= criterias[i].nameC
+                            td
+                                input(type="range" min="-7" max="9" step="1" value="1" name="rn"+i+"_"+j).rangeCrit
+                            td= criterias[j].nameC
+                            - j++
+                    - i++
+                td
+                    input(class="buttonProfiles" type="submit" value="Далее")   

@@ -1,0 +1,56 @@
+extends user-pattern
+
+block mainblock
+    .infousermain
+        form(method="post" action="/educationdata")
+            h1 Контакты
+            table.formRegLog 
+                tr
+                    td Телефон *
+                    td 
+                        input(class="txtinput" type="tel" name="phone" value=info.phone required) 
+                tr 
+                    td Email *
+                    td 
+                        input(class="txtinput" type="email" name="email" value=info.email required) 
+            h1 Адрес
+            table.formRegLog  
+                tr 
+                    td Страна * 
+                    td 
+                        input(class="txtinput" type="text" name="country" value=info.country required)
+                tr 
+                    td Регион *
+                    td 
+                        input(class="txtinput" type="text" name="region" value=info.region required) 
+                tr 
+                    td Город *
+                    td 
+                        input(class="txtinput" type="text" name="city" value=info.city required) 
+                tr 
+                    td Улица * 
+                    td 
+                        input(class="txtinput" type="text" name="street" value=info.street required)
+                tr 
+                    td Дом *
+                    td 
+                        input(class="txtinput" type="text" name="house" value=info.house required)
+                tr 
+                    td Квартира
+                    td 
+                        input(class="txtinput" type="text" name="flat" value=info.flat) 
+                tr 
+                    td Индекс *
+                    td 
+                        input(class="txtinput" type="text" name="indexR" value=info.indexR required)
+            h1 Общежитие
+            table.formRegLog    
+                tr 
+                    td         
+                    td 
+                        if (info.isneedlive)
+                            input(type='checkbox' name='isneedlive' checked)
+                        else
+                            input(type='checkbox' name='isneedlive' unchecked)
+                        span Нуждаюсь в общежитии на время обучения                                                                                                                              
+            input(class="buttonD" type="submit" value="Далее")

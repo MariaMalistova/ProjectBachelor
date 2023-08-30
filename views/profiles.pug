@@ -1,0 +1,41 @@
+extends user-pattern
+
+mixin selects(num)
+    each val, index in profiles
+        if (num==val.id)
+            option(value=val.nameP selected)=val.nameP
+        else
+            option(value=val.nameP)=val.nameP 
+        
+
+block mainblock
+    .infousermain
+    h1 Выберите направления обучения
+        form(method="post" action="/docsload").formProfile
+            table.formRegLog
+                tr 
+                    td 1. 
+                    td   
+                        select(name="profile1" required)
+                            option(value='')
+                            +selects(info.profile1)
+                tr 
+                    td 2. 
+                    td   
+                        select(name="profile2")
+                            option(value='')
+                            +selects(info.profile2)
+                tr 
+                    td 3. 
+                    td   
+                        select(name="profile3")
+                            option(value='')
+                            +selects(info.profile3)
+                tr 
+                    td  
+                    td   
+                        a(href="/chooseprofilestep1") Пройти тест на выбор подходящего направления обучения            
+                tr 
+                        td
+                        td
+                            input(class="buttonProfiles" type="submit" value="Далее")             

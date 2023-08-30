@@ -1,0 +1,47 @@
+extends user-pattern
+
+block mainblock
+    .infousermain
+        form(method="post" action="/passportdata")
+            h1 Личные данные 
+            table.formRegLog 
+                tr
+                    td Фамилия *
+                    td 
+                        input(class="txtinput" type="text" name="surname" value=session.surname required) 
+                tr 
+                    td Имя *
+                    td 
+                        input(class="txtinput" type="text" name="name" value=session.name required) 
+                tr 
+                    td Отчество 
+                    td 
+                        input(class="txtinput" type="text" name="patronym" value=session.patronym required)
+                tr 
+                    td Пол *
+                    td 
+                        if (info.gender == "мужской")
+                            select(class="txtsel" name="gender" required)
+                                option(value="мужской" selected) мужской
+                                option(value="женский") женский
+                        else
+                            select(class="txtsel" name="gender" required)
+                                option(value="мужской") мужской
+                                option(value="женский" selected) женский       
+                tr 
+                    td Дата рождения *
+                    td 
+                        input(class="txtinput" type="date" name="dateofbirth" value=info.dateofbirth required)
+                tr 
+                    td Место рождения *
+                    td 
+                        input(class="txtinput" type="text" name="birthplace" value=info.birthplace required)  
+                tr 
+                    td Страна рождения *
+                    td 
+                        input(class="txtinput" type="text" name="birthcountry" value=info.birthcountry required) 
+                tr 
+                    td Гражданство *
+                    td 
+                        input(class="txtinput" type="text" name="citizenship" value=info.citizenship required)                                                   
+            input(class="buttonD" type="submit" value="Далее")

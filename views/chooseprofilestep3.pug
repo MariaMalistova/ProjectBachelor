@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    form(method="post" action="/chooseprofilestep3").formProfs
+        - var k = 0;
+        while k < criterias.length
+            h2='Какое направления обучения предпочтительнее для критерия "'+ criterias[k].nameC+'"?'
+            table.profsCompar 
+                - var i = 0;
+                while i < profiles.length - 1
+                    - var j = i + 1
+                    while j < profiles.length
+                        tr
+                            td= profiles[i].nameP
+                            td
+                                input(type="range" min="-7" max="9" step="1" value="1" name="rn"+i+"_"+j).rangeCrit
+                            td= profiles[j].nameP
+                            - j++
+                    - i++
+            - k++    
+        input(class="buttonProfiles" type="submit" value="Далее")   

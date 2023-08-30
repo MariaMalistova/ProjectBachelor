@@ -1,0 +1,64 @@
+extends layout
+
+block content
+    .listab
+        .selectProf
+            select(class="profsel" name="RLege")
+                option(value="" selected) Прикладная информатика
+            input(class="buttonProfilesS" type="submit" value="Вывести")     
+        span Направление: 09.03.03 Прикладная информатика
+        span Форма обучения: очная
+        span Конкурс: 69
+        span Бюджетные места: 34
+        span Минимальный балл: 160
+        span Количество поданных заявлений: 7
+        input(class="buttonProfilesS" type="submit" value="Место в конкурсе") 
+        table
+            tr 
+                td Номер
+                td Фамилия Имя Отчество
+                td Дата рождения
+                td Баллы ЕГЭ
+                td Индивидуальные достижения  
+            tr 
+                td 3
+                td Малистова Мария Романовна
+                td 22.02.1998
+                td 255
+                td 
+            tr 
+                td 29
+                td Косов Алексей Николаевич
+                td 13.08.1998
+                td 213
+                td   
+            tr 
+                td 30
+                td Лыкина Светлана Анатольевна
+                td 11.08.1998
+                td 201
+                td    
+            tr 
+                td 31
+                td Васюков Андрей Михайлович
+                td 20.09.1998
+                td 135
+                td    
+            tr 
+                td 32
+                td Борисова Анастасия Николаевна
+                td 05.11.1998
+                td 217
+                td    
+            tr 
+                td 33
+                td Семенов Илья Васильевич
+                td 13.05.1998
+                td 161
+                td    
+            tr 
+                td 33
+                td Денисова Надежда Сергеевна
+                td 01.04.1998
+                td 113
+                td         

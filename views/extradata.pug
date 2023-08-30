@@ -1,0 +1,53 @@
+extends user-pattern
+
+block mainblock
+    .infousermain
+        form(method="post" action="/profiles")
+            h1 Дополнительные сведения
+            table.formRegLog
+                tr 
+                    td
+                        if (info.isspecialrights)
+                            input(type='checkbox' name='isspecialrights' checked)
+                        else    
+                            input(type='checkbox' name='isspecialrights' unchecked)
+                    td Претендую на особые права при поступлении
+                tr 
+                    td
+                        if (info.iswithoustest)
+                            input(type='checkbox' name='iswithoustest' checked)
+                        else    
+                            input(type='checkbox' name='iswithoustest' unchecked)
+                    td Имею право на прием без вступительных испытаний
+                tr 
+                    td
+                        if (info.isdiploma)
+                            input(type='checkbox' name='isdiploma' checked)
+                        else    
+                            input(type='checkbox' name='isdiploma' unchecked)
+                    td Имею диплом бакалавра/диплом специалиста/диплом магистра                                             
+                tr 
+                    td
+                        if (info.iskvota)
+                            input(type='checkbox' name='iskvota' checked)
+                        else    
+                            input(type='checkbox' name='iskvota' unchecked)
+                    td Поступаю на места в рамках целевой квоты
+            h3 Индивидуальные достижения        
+            table.formRegLog          
+                tr 
+                    td 1. 
+                    td   
+                        input(class="txtinput" type='text' name='achiv1' value=info.achiv1)
+                tr 
+                    td 2. 
+                    td   
+                        input(class="txtinput" type='text' name='achiv2' value=info.achiv2)
+                tr 
+                    td 3. 
+                    td   
+                        input(class="txtinput" type='text' name='achiv3' value=info.achiv3)                                                                                                                                                                                                                    
+                tr 
+                    td
+                    td
+                        input(class="buttonRegLog" type="submit" value="Далее")

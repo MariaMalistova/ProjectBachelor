@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    .profilesWrapper
+        h2 Выберите направления которые вам интересны (не более шести)
+        form(method="post" action="/chooseprofilestep1").formProfile
+            table.formProfiles 
+                each val, index in profiles
+                    tr
+                        td 
+                            input(type='checkbox' name='profileCheck_'+val.id unchecked)
+                        td(name='checkName_'+val.id)= val.nameP 
+                tr 
+                    td
+                    td
+                        input(class="buttonProfiles" type="submit" value="Login")        

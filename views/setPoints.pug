@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    table
+        each val, index in users
+            tr
+                td 
+                    input(class="points" type='text' name='RLyear' pattern="[0-9]{4}")
+                td=val.nameP   
+
+        

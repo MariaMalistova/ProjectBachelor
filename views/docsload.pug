@@ -1,0 +1,21 @@
+extends user-pattern
+
+block mainblock
+    .infousermain
+        form(id="uploadForm" enctype="multipart/form-data" action="/upload" method="post").docsList
+            h1 Загрузка документов
+            p Документ, удостоверяющий личность
+            input(type="file" name="docPassport" required)
+            p Документ об образовании
+            input(type="file" name="docEducation" required)
+            p Фотография
+            input(type="file" name="docPhoto" required)
+            if (info.isspecialrights)
+                input(type="file" name="docRirht" required)
+            if (info.iskvota)  
+                input(type="file" name="docCel" required)
+            if (info.profile1 == 8 || info.profile2 == 8 || info.profile3 == 8 || info.profile1 == 18 || info.profile2 == 18 || info.profile3 == 18) 
+                p Договор о целевом обучении
+                input(type="file" name="docMed" required)
+                p=" "
+            input(class="buttonRegLog" type="submit" value="Загрузить файлы" name="submit")      
